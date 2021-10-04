@@ -285,8 +285,8 @@ where
                     Ok(request) => {
                         if io_tx.send(request).await.is_err() {
                             error!(
-                            "Sink I/O channel should not be closed before sink itself is closed."
-                        );
+                                "Sink I/O channel should not be closed before sink itself is closed."
+                            );
                             return Err(());
                         }
                     }
